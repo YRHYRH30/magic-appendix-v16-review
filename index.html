@@ -1,100 +1,71 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>סקירה · תיקוני יעל + הערות יהודה · נספח המדבקות v16b</title>
+<title>סקירה · נספח מדבקות MAGIC · v16c</title>
 <style>
 *{box-sizing:border-box}
-body{font-family:Heebo,Arial,sans-serif;margin:0;background:#f4f1fb;color:#222;line-height:1.55}
-header{background:#2a1a4a;color:#fff;padding:14px 20px;position:sticky;top:0;z-index:20}
-header h1{margin:0;font-size:19px}
+body{font-family:Heebo,Arial,sans-serif;margin:0;background:#f4f1fb;color:#222;line-height:1.5}
+header{background:#2a1a4a;color:#fff;padding:12px 18px;position:sticky;top:0;z-index:20}
 header .top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-header .top h1{flex:1}
+header h1{margin:0;font-size:19px;flex:1}
 header nav{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
 header nav a{font-size:12px;padding:3px 10px;border-radius:999px;text-decoration:none;color:#fff;border:1px solid #fff6}
 header nav a.f{background:#1f7a3a}header nav a.o{background:#b36b00}
-button,a.btn{background:#e8ff3a;color:#111;border:0;border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer;text-decoration:none}
+button{background:#e8ff3a;color:#111;border:0;border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer}
 button.sec{background:#eee}
-.wrap{max-width:1180px;margin:0 auto;padding:14px 14px 40px}
-.intro{background:#fff;border-radius:12px;padding:12px 16px;margin:14px 0;box-shadow:0 2px 12px #2a1a4a14}
-.card{background:#fff;border-radius:14px;padding:16px 18px 20px;margin:18px 0;box-shadow:0 2px 14px #2a1a4a14;border-right:6px solid #1f7a3a}
-.card.open{border-right-color:#e08a00}
-.card h2{margin:0 0 8px;font-size:21px;color:#2a1a4a;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.wrap{max-width:1100px;margin:0 auto;padding:10px 14px 40px}
+.card{background:#fff;border-radius:14px;padding:14px 18px 18px;margin:16px 0;box-shadow:0 2px 14px #2a1a4a14;border-right:6px solid #1f7a3a}
+.card.wait{border-right-color:#e08a00}
+.card h2{margin:0 0 4px;font-size:20px;color:#2a1a4a;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .badge{font-size:12px;padding:2px 10px;border-radius:999px;color:#fff;background:#1f7a3a}
-.card.open .badge{background:#e08a00}
-.reqbox{background:#fffbe6;border:1px solid #f0e08a;border-radius:10px;padding:10px 14px;margin:8px 0}
-.reqbox .l{font-size:12px;color:#7a6a00;font-weight:700;margin-bottom:2px}
-.reqbox pre{margin:0;white-space:pre-wrap;font:inherit;font-size:16px;direction:rtl}
-.expl{margin:8px 0;color:#333}
-.grid{display:grid;gap:16px;margin:12px 0}
-.grid.two{grid-template-columns:1fr 1fr}
+.card.wait .badge{background:#e08a00}
+.what{margin:2px 0 8px;font-size:16px;color:#333}
+.grid{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin:8px 0}
 .grid.one{grid-template-columns:minmax(0,520px)}
-.grid.many{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-@media(max-width:700px){.grid.two{grid-template-columns:1fr}}
-.col h3{margin:0 0 6px;font-size:15px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+.col h3{margin:0 0 5px;font-size:15px}
 .col.o h3{color:#7a1f1f}.col.n h3{color:#1f7a3a}
 .stage{position:relative;cursor:crosshair;display:block;max-width:100%}
 .stage img{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 2px 10px #0003;background:#eee}
 .pin{position:absolute;transform:translate(50%,-100%);width:26px;height:26px;border-radius:50% 50% 50% 0;background:#e3262b;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:12px;border:2px solid #fff;box-shadow:0 1px 4px #0006;cursor:pointer}
-.hint{font-size:12px;color:#777;margin:4px 0 0}
-.done{background:#e8f6ec;border:1px solid #b5dfc1;border-radius:10px;padding:8px 12px;margin:8px 0}
-.unclear{background:#fff1e0;border:1px solid #f0c48a;border-radius:10px;padding:8px 12px;margin:8px 0}
-.rec{background:#eaf1ff;border:1px solid #b7cdf5;border-radius:10px;padding:8px 12px;margin:8px 0}
-.note{background:#f3eefc;border:1px solid #d9cdf2;border-radius:10px;padding:8px 12px;margin:8px 0}
+.removed{display:flex;align-items:center;justify-content:center;min-height:200px;border:3px dashed #1f7a3a;border-radius:10px;color:#1f7a3a;font-size:22px;font-weight:700;background:#f2fbf5;text-align:center;padding:20px}
 .lbl{font-weight:700}
-.yn{background:#e9f5ff;border:1px solid #9cc9ee;border-radius:10px;padding:10px 14px;margin:8px 0}
-.yn .l{font-size:12px;color:#0b4f85;font-weight:700;margin-bottom:2px}
-.yn pre{margin:0;white-space:pre-wrap;font:inherit;font-size:16px;direction:rtl}
-.card.wait{border-right-color:#8a8a8a}.card.wait .badge{background:#777}
-.col.p h3{color:#7a5a00}
-.grid.three{grid-template-columns:repeat(3,1fr)}@media(max-width:900px){.grid.three{grid-template-columns:1fr}}
-.removed{display:flex;align-items:center;justify-content:center;min-height:240px;border:3px dashed #1f7a3a;border-radius:10px;color:#1f7a3a;font-size:22px;font-weight:700;background:#f2fbf5;text-align:center;padding:20px}
-textarea{width:100%;font:inherit;border:1px solid #ddd;border-radius:8px;padding:10px;min-height:80px;background:#fafafa;resize:vertical}
+textarea{width:100%;font:inherit;border:1px solid #ddd;border-radius:8px;padding:8px;min-height:60px;background:#fafafa;resize:vertical}
 .pinlist .item{border-bottom:1px solid #eee;padding:6px 0}
 .pinlist b{color:#e3262b}
 .pinlist textarea{min-height:44px;margin-top:4px}
 .pinlist .del{float:left;padding:1px 8px;background:#fee;color:#a00}
 .meta{font-size:12px;color:#777}
-.done-wrap{text-align:center;padding:26px 12px 60px}
-#done{font-size:24px;padding:18px 44px;background:#e3262b;color:#fff;border-radius:12px;font-weight:700}
+.done-wrap{text-align:center;padding:22px 12px 50px}
+#done{font-size:24px;padding:16px 44px;background:#e3262b;color:#fff;border-radius:12px;font-weight:700}
 #doneMsg{margin-top:12px;font-size:15px}
 </style></head><body>
-<header><div class="top"><h1>סקירה · נספח המדבקות MAGIC · גרסה v16b (תיקוני יעל + הערות יהודה)</h1>
+<header><div class="top"><h1>סקירה · נספח מדבקות MAGIC · v16c</h1>
 <button id="exp">ייצוא הערות</button><button id="cp" class="sec">העתקת הערות</button></div>
 <nav id="nav"></nav></header>
 <div class="wrap">
-<div class="intro"><b>איך זה עובד:</b> לכל עמוד בבקשה של יעל יש כרטיס. בכל כרטיס: הבקשה של יעל מילה במילה, <b>ההערה של יהודה</b> (בכחול), העמוד המקורי (v15c), הגרסה הקודמת v16 והעמוד אחרי התיקון v16b. אפשר ללחוץ על כל תמונה כדי לנעוץ סיכה ולכתוב הערה, ובתחתית כל כרטיס יש תיבת הערות. בסוף לוחצים «סיימתי תיקונים» והכול נשלח לוואטסאפ של הסטודיו.<br><span class="meta">מוצגת המהדורה החרדית (המהדורה הכללית מקבלת אותם שינויים). לא נשלח דבר ליעל; זו טיוטה לאישור יהודה. מפתח השמירה בדפדפן: magic-appendix-v16b-yael-pins (חדש, נפרד מ-v16).</span></div>
+<p class="meta" style="margin:10px 0 0">מקור מול גרסה אחרונה. לחצו על תמונה כדי לנעוץ סיכה. מהדורה חרדית (הכללית זהה). טיוטה לאישור יהודה.</p>
 <div id="secs"></div>
-<div class="intro"><h3 style="margin:0 0 6px">כל ההערות</h3><div class="toolbar"><button id="exp2">ייצוא הערות</button> <button id="cp2" class="sec">העתקת הערות</button></div><p class="hint">ההערות נשמרות בדפדפן הזה (localStorage, מפתח: magic-appendix-v16b-yael-pins).</p></div>
 <div class="done-wrap"><button id="done">✅ סיימתי תיקונים</button><div id="doneMsg"></div></div>
 </div>
 <script>
-var SECS=[{"id": "S1", "title": "S1 · צעצועים", "kind": "fixed", "q": "עמ' S1: להקטין משמעותית את הצעוצעים שיכנסו בלב 2 ס\"מ על 2 ס\"מ", "explain": "המדבקות של הצעצועים גדולות מדי. יעל רוצה שכל צעצוע יהיה קטן, בערך 2×2 ס״מ, כדי שייכנס בתוך הלב שבעמוד 3 בחוברת.", "orig": [{"id": "o_S1", "label": "מקור S1"}], "fixed": [{"id": "n_S1", "label": "אחרי תיקון S1"}], "extra": [{"id": "fit_S1", "label": "בדיקת התאמה: הצעצועים על הלב בעמוד 3"}], "done": "כל 9 הצעצועים הוקטנו לכ-2×2 ס״מ (כולל שוליים לבנים) ומסודרים בתאים קטנים. בבדיקת ההתאמה אפשר לראות אותם בתוך הלב בחוברת.", "note": "ללא שינוי ב-v16b."}, {"id": "S2", "title": "S2 · רכבת אדומה (RED TRAIN)", "kind": "fixed", "q": "עמ' S2:בRED TRAIN שיעשה בן במקום בת. רק דמויות", "explain": "בעמוד של הרכבת האדומה יעל מבקשת \"בן במקום בת\" ו\"רק דמויות\". יהודה הכריע: להשאיר את האבא (המוכר), למחוק את הרכבת ולהוסיף מדבקת בן.", "yn": "את האבא תשאיר מכמו שהיה במקום בן שהיה שם שים בת ואת הרכבת תמחוק", "orig": [{"id": "o_S2", "label": "מקור S2 (v15c)"}], "prev": [{"id": "v16_S2", "label": "v16 (לא שונה)"}], "fixed": [{"id": "n2_S2", "label": "v16b: אחרי תיקון"}], "done": "הרכבת נמחקה. האבא (המוכר) נשאר כמו שהיה. נוספה מדבקת בן, הדמות הקיימת של הבן מ-S3 (אותו סגנון; במהדורה החרדית עם כיפה), באותו גודל תא של 40×40 מ״מ. שתי המדבקות ממורכזות בעמוד.", "note": "שים לב: (1) בהערת יהודה המקורית נכתב \"בת\", אבל ההכרעה היא בן, בהתאם לבקשה של יעל (\"בן במקום בת\"). (2) כותרת העמוד עדיין \"I Want a Red Train!\". לא שונתה כי לא התבקש. לשקול כותרת חדשה."}, {"id": "S3", "title": "S3 · משפחה (Where is my ball?)", "kind": "fixed", "q": "עמ' S3:דמויות שביד של הדמות יש הצעצוע\nאת האחות תעשה 2 מדבקות זהות\nביד של האבא: אוטו כחול\nביד של האמא רובוט\nביד של האח- דובי\nביד של התינוק - כדור אדום", "explain": "כל דמות במשפחה מחזיקה את הצעצוע שלה (אבא מכונית כחולה, אמא רובוט, אח דובי, תינוק כדור אדום), והאחות בשתי מדבקות זהות.", "yn": "עשית עבודה מעולה את הציורים בלי הדמויות תמחוק", "orig": [{"id": "o_S3", "label": "מקור S3 (v15c)"}], "prev": [{"id": "n_S3", "label": "v16 (הגרסה הקודמת)"}], "fixed": [{"id": "n2_S3", "label": "v16b: אחרי תיקון"}], "done": "הוסרו ארבע מדבקות הצעצועים הבודדים (כדור, מכונית, רובוט, דובי). נשארו 6 מדבקות הדמויות (בן, אבא, אמא, אחות ×2, תינוק), בסידור 3×2 ממורכז. גודל המדבקות לא השתנה (40×40 מ״מ)."}, {"id": "S4", "title": "S4 · בלונים", "kind": "fixed", "q": "עמ' S4:בלונים - חיותך צורני על הבלונים שיתאים לבלונים", "explain": "\"חיתוך צורני\" = חיתוך בצורת הבלון עצמו (ולא ריבוע), כך שכל מדבקה תתאים בדיוק לבלון הריק המצויר בחוברת.", "orig": [{"id": "o_S4", "label": "מקור S4"}], "fixed": [{"id": "n_S4", "label": "אחרי תיקון S4"}], "extra": [{"id": "fit_S4", "label": "בדיקת התאמה: הבלונים על עמוד 13 בחוברת"}], "done": "כל בלון עכשיו מדבקה נפרדת עם קו חיתוך בצורת הבלון (וקטורי, נמצא בקובץ נפרד), בגודל הסימון המקווקו שבחוברת.", "note": "החלטה קטנה שלקחנו: החוט של הבלון הוסר מהמדבקה, כי בחוברת החוט כבר מצויר מהבלון ליד של הילד. בלי החוט המדבקה מתאימה לאליפסה המקווקווה. המלצה: להשאיר כך. חלופה: להשאיר את החוט, אז החיתוך גדול יותר ויוצא מהמסגרת המסומנת. מה נכון?"}, {"id": "S5", "title": "S5 · בגדים נקיים ומלוכלכים", "kind": "fixed", "q": "עמ' S5: בגדים מלוכלכים: מכנסיים, חצאית, סוודר. בגדים נקיים: חולצה\nקצרה, שמלה, גרביים. קצת להקטין את הבגדים", "explain": "בעמוד הבגדים יעל מבקשת סט מלוכלך (מכנסיים, חצאית, סוודר) וסט נקי (חולצה קצרה, שמלה, גרביים), ושהבגדים יהיו קצת קטנים יותר.", "orig": [{"id": "o_S5", "label": "מקור S5"}], "fixed": [{"id": "n_S5", "label": "אחרי תיקון S5"}], "extra": [], "done": "נשארו 6 בגדים: מלוכלך – מכנסיים, חצאית, סוודר; נקי – חולצה קצרה, שמלה, גרביים. הכול הוקטן מעט.", "note": "שאלה קטנה: כ\"סוודר\" המלוכלך שימשה הקפוצ׳ון הירוק המלוכלך הקיים בעמוד המקורי (אין סוודר מלוכלך אחר). המלצה: להשאיר. חלופה: ליצור סוודר קרם מלוכלך חדש (כמו בעמוד בגדי החורף)."}, {"id": "S6", "title": "S6 · דובים (העמוד המקורי)", "kind": "fixed", "q": "עמ' S6: דובים- מאחורי התינוק לשים לבן", "explain": "יעל מדברת על עמוד הדובים: \"מאחורי התינוק לשים לבן\". יהודה: העמוד שהוצג (בגדי דובי של v15c) הוא לא S6. צריך להביא את העמוד המקורי ולהוסיף ריבוע ריק באותו גודל ליד הדובי הקטן שלמעלה.", "yn": "זה לא s6 בכלל לא תביא את המקורי ותעשה ליד הדובי הקטן למעלה עוד ריבוע באותו גודל אבל שהוא יהיה ריק", "orig": [{"id": "orig_S6_v107", "label": "העמוד המקורי S6 (v10.7): 7 דובים לבושים"}], "prev": [{"id": "o_S6", "label": "מה שהוצג עד עכשיו כ-S6 (v15c/v16, לא שונה)"}], "fixed": [{"id": "n2_S6", "label": "v16b: המקורי + ריבוע ריק"}], "done": "זוהה העמוד המקורי: \"S6 Teddy's Clothes\" מקובץ הלקוח v10.7, עם 7 דובים לבושים ודובי תינוק עם מוצץ בריבוע למעלה בצד ימין. זה מתאים ל\"דובים\" ול\"תינוק\" של יעל ול\"דובי הקטן למעלה\" של יהודה. נוסף ריבוע ריק, בגודל זהה לריבוע של דובי התינוק, מיד משמאלו (שורה עליונה). העמוד בנוי על אותה מסגרת כמו שאר עמודי v16b, והוראת העמוד עודכנה ל\"עמוד 20\".", "note": "שאלות קטנות: (1) העמוד נוסף כעמוד נוסף ב-PDF (13 עמודים) ולכן יש כרגע שני עמודי \"S6\": המקורי החדש ועמודי בגדי הדובי של v15c (S6 ו-S7), שנשארו ללא שינוי. האם להסיר או למספר מחדש? (2) הזיהוי נעשה לפי תיאור יהודה ובקשת יעל; אם זה לא העמוד, לכתוב כאן."}, {"id": "S7", "title": "S7 · מסכה (אברי פנים), אצלנו עמוד S8", "kind": "fixed", "q": "עמ' S7 :אברי גוף למסכה- מדבקות שקוף- שישנה את אחד הפיות לפv עצוב, לשנות\nעיניים לסוג אחר\nלהוריד שם ובמקום זה לשנות לעוד סוג של אף", "explain": "בעמוד חלקי הפנים למסכה: להחליף אחד הפיות בפה עצוב, להחליף את העיניים בסוג אחר, ובמקום \"שם\" (כנראה שפם) לשים עוד סוג של אף.", "yn": "להוריד שפם לשים במקומו אף ליצור פה חדש בעיצוב שונה וגם עיניים אחד מהם בעיצוב שונה", "orig": [{"id": "o_S8", "label": "מקור: חלקי פנים (v15c)"}], "prev": [{"id": "v16_S8", "label": "v16 (השפם נשאר)"}], "fixed": [{"id": "n2_S8", "label": "v16b: אחרי תיקון"}], "done": "השפם הוסר ובמקומו נכנס אף החזיר. נשארו הפה העצוב החדש (בעיצוב שונה) וזוג עיניים שבו עין אחת בעיצוב שונה. 9 מדבקות בסידור 3×3, בלי מקום ריק."}, {"id": "S8", "title": "S8 · חיות (גן חיות)", "kind": "fixed", "q": "עמ' S8: חיות- להקטין לפי הגודל של הגן חיות", "explain": "המדבקות של החיות גדולות; צריך להקטין אותן לגודל התיבות \"הדביקו כאן\" שבעמוד גן החיות בחוברת (עמוד 26).", "orig": [{"id": "o_S9", "label": "מקור (אצלה S8)"}], "fixed": [{"id": "n_S9", "label": "אחרי תיקון"}], "extra": [{"id": "fit_S9", "label": "בדיקת התאמה: החיות בתיבות של עמוד 26"}], "done": "כל 7 החיות הוקטנו כך שנכנסות בתיבות (כ-29.8×22.9 מ״מ). בבדיקת ההתאמה מוצג על עמוד גן החיות."}, {"id": "S9", "title": "S9 · פרצופי אוהב / לא אוהב (הסרה)", "kind": "fixed", "q": "עמ' S9: מיותר- פנים של פרצוף אוהב ולא אוהב", "explain": "יעל אומרת שהעמוד מיותר, כלומר לבטל אותו. (גם במייל מ-26.10 היא כתבה \"עמוד 11 לבטל\".)", "orig": [{"id": "o_S11", "label": "מקור (אצלה S9): אוהב / לא אוהב"}], "fixed": [], "extra": [], "done": "העמוד הוסר מקובץ ה-PDF. נשארו 12 עמודים: S1–S10, S12 ועמוד חדש.", "note": "שאלה קטנה: במספור יש עכשיו \"חור\" (אין S11). המלצה: להשאיר את המספרים כמו שהם, כדי שההפניות לא יתבלבלו. חלופה: למספר מחדש.", "removed": true}, {"id": "NEW", "title": "עמוד חדש · בגדים לחיות", "kind": "wait", "q": "עמוד נוסף עליו דיברנו בגדים לחיות:\nאם תוכל לקחת את הבגדים הקיימים שכבר יצרת ולהתאים אותם לגדלי החיות.\nצב- חולצה, כלב- נעליים, קוף- מכנסיים, חתולה- שמלה, נחש- כובע, חמור- גרביים", "explain": "יעל ביקשה עמוד מדבקות של בגדים לחיות (חולצה לצב, נעליים לכלב ועוד).", "yn": "לא זה הכוונה, אני אשלח לך בוואצפ מה שהיא התכוונה", "orig": [{"id": "o_S10", "label": "העמוד הקיים S10 (בגדי חיות)"}, {"id": "book_p29", "label": "החוברת, עמוד 29"}], "unclear": "ממתין להסבר של יעל, שיהודה ישלח בוואטסאפ. לא נוגעים בעמוד הזה עד שיגיע."}], SRC={"o_S5": "img/o_S5.jpg", "o_S11": "img/o_S11.jpg", "orig_S6_v107": "img/orig_S6_v107.jpg", "n2_S3": "img/n2_S3.jpg", "v16_S8": "img/v16_S8.jpg", "n2_S2": "img/n2_S2.jpg", "n2_S6": "img/n2_S6.jpg", "o_S4": "img/o_S4.jpg", "n2_S8": "img/n2_S8.jpg", "v16_S2": "img/v16_S2.jpg", "o_S1": "img/o_S1.jpg", "o_S9": "img/o_S9.jpg", "n_S5": "img/n_S5.jpg", "book_p29": "img/book_p29.jpg", "fit_S4": "img/fit_S4.jpg", "o_S2": "img/o_S2.jpg", "n_S9": "img/n_S9.jpg", "fit_S9": "img/fit_S9.jpg", "o_S3": "img/o_S3.jpg", "n_S4": "img/n_S4.jpg", "o_S8": "img/o_S8.jpg", "fit_S1": "img/fit_S1.jpg", "o_S10": "img/o_S10.jpg", "o_S6": "img/o_S6.jpg", "n_S1": "img/n_S1.jpg", "n_S3": "img/n_S3.jpg"}, KEY='magic-appendix-v16b-yael-pins', TITLE='סקירה · נספח המדבקות MAGIC v16b (תיקוני יעל + הערות יהודה)';
+var SECS=[{"id": "S1", "title": "S1 · צעצועים", "kind": "fixed", "what": "הצעצועים הוקטנו ל-2×2 ס״מ.", "orig": [{"id": "o_S1", "label": "מקור"}], "fixed": [{"id": "v16c_S1", "label": "גרסה אחרונה (v16c)"}]}, {"id": "S2", "title": "S2 · רכבת אדומה", "kind": "fixed", "what": "הרכבת הוסרה ונוספה מדבקת בן.", "orig": [{"id": "o_S2", "label": "מקור"}], "fixed": [{"id": "v16c_S2", "label": "גרסה אחרונה (v16c)"}]}, {"id": "S3", "title": "S3 · משפחה", "kind": "fixed", "what": "נשארו רק הדמויות, בלי צעצועים בודדים.", "orig": [{"id": "o_S3", "label": "מקור"}], "fixed": [{"id": "v16c_S3", "label": "גרסה אחרונה (v16c)"}]}, {"id": "S4", "title": "S4 · בלונים", "kind": "fixed", "what": "כל בלון עם קו חיתוך בצורתו.", "orig": [{"id": "o_S4", "label": "מקור"}], "fixed": [{"id": "v16c_S4", "label": "גרסה אחרונה (v16c)"}]}, {"id": "S5", "title": "S5 · בגדים נקיים ומלוכלכים", "kind": "fixed", "what": "שלוש מלוכלכים ושלוש נקיים, מעט קטנים יותר.", "orig": [{"id": "o_S5", "label": "מקור"}], "fixed": [{"id": "v16c_S5", "label": "גרסה אחרונה (v16c)"}]}, {"id": "S6", "title": "S6 · דובים", "kind": "fixed", "what": "העמוד המקורי של הדובים, עם ריבוע ריק ליד התינוק.", "orig": [{"id": "orig_S6_v107", "label": "מקור (v10.7)"}], "fixed": [{"id": "v16c_S6", "label": "גרסה אחרונה (v16c)"}]}, {"id": "S7", "title": "S7 · מסכה (אברי פנים)", "kind": "fixed", "what": "אף אדם רגיל במקום החזיר, ובכל ריבוע עיניים זוג, כל זוג שונה.", "orig": [{"id": "o_S8", "label": "מקור"}], "fixed": [{"id": "v16c_S7", "label": "גרסה אחרונה (v16c)"}]}, {"id": "S8", "title": "S8 · גן חיות", "kind": "fixed", "what": "החיות הוקטנו לגודל התיבות בחוברת.", "orig": [{"id": "o_S9", "label": "מקור"}], "fixed": [{"id": "v16c_S8", "label": "גרסה אחרונה (v16c)"}]}, {"id": "S9", "title": "S9 · אוהב / לא אוהב", "kind": "fixed", "what": "העמוד הוסר.", "orig": [{"id": "o_S11", "label": "מקור"}], "fixed": [], "removed": true}, {"id": "NEW", "title": "עמוד חדש · בגדים לחיות", "kind": "wait", "what": "ממתין להסבר של יעל.", "orig": [{"id": "o_S10", "label": "העמוד הקיים"}], "fixed": []}], SRC={"o_S9": "img/o_S9.jpg", "o_S3": "img/o_S3.jpg", "o_S5": "img/o_S5.jpg", "orig_S6_v107": "img/orig_S6_v107.jpg", "v16c_S7": "img/v16c_S7.jpg", "o_S2": "img/o_S2.jpg", "o_S8": "img/o_S8.jpg", "o_S10": "img/o_S10.jpg", "o_S4": "img/o_S4.jpg", "v16c_S6": "img/v16c_S6.jpg", "v16c_S5": "img/v16c_S5.jpg", "v16c_S1": "img/v16c_S1.jpg", "o_S1": "img/o_S1.jpg", "v16c_S8": "img/v16c_S8.jpg", "o_S11": "img/o_S11.jpg", "v16c_S4": "img/v16c_S4.jpg", "v16c_S3": "img/v16c_S3.jpg", "v16c_S2": "img/v16c_S2.jpg"}, KEY='magic-appendix-v16c-yael-pins', TITLE='סקירה · נספח מדבקות MAGIC v16c';
 var ST; try{ST=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){ST={}}
 ST.pins=ST.pins||[]; ST.notes=ST.notes||{};
 function save(){localStorage.setItem(KEY,JSON.stringify(ST))}
-var LABEL={}; SECS.forEach(function(s){['orig','prev','fixed','extra'].forEach(function(l){(s[l]||[]).forEach(function(i){LABEL[i.id]=i.label})})});
+var LABEL={}; SECS.forEach(function(s){['orig','fixed'].forEach(function(l){(s[l]||[]).forEach(function(i){LABEL[i.id]=i.label})})});
 function esc(t){return String(t).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
-function stage(i,cls){return '<div class="col '+cls+'"><h3>'+esc(i.label)+'</h3><div class="stage" data-img="'+i.id+'"><img src="'+SRC[i.id]+'" alt="'+esc(i.label)+'"></div><p class="hint">לחצו על התמונה כדי לנעוץ סיכה</p></div>'}
+function stage(i,cls){return '<div class="col '+cls+'"><h3>'+esc(i.label)+'</h3><div class="stage" data-img="'+i.id+'"><img src="'+SRC[i.id]+'" alt="'+esc(i.label)+'"></div></div>'}
 var nav=document.getElementById('nav'), host=document.getElementById('secs');
 SECS.forEach(function(s){
   var a=document.createElement('a');a.href='#sec-'+s.id;a.className=s.kind=='fixed'?'f':'o';a.textContent=(s.kind=='fixed'?'✔ ':'? ')+s.title.split(' · ')[0];nav.appendChild(a);
-  var c=document.createElement('section');c.className='card '+(s.kind=='fixed'?'':(s.kind=='wait'?'wait':'open'));c.id='sec-'+s.id;
-  var h='<h2>'+esc(s.title)+' <span class="badge">'+(s.kind=='fixed'?'תוקן':(s.kind=='wait'?'ממתין להסבר של יעל, לא שונה':'שאלה פתוחה, לא שונה'))+'</span></h2>';
-  h+='<div class="reqbox"><div class="l">הבקשה של יעל (מילה במילה)</div><pre>'+esc(s.q)+'</pre></div><p class="expl"><span class="lbl">בעברית פשוטה:</span> '+esc(s.explain)+'</p>';
-  if(s.yn)h+='<div class="yn"><div class="l">ההערה של יהודה (מילה במילה)</div><pre>'+esc(s.yn)+'</pre></div>';
-  if(s.kind=='fixed'){
-    h+='<div class="grid '+((s.prev||[]).length||s.orig.length>1?'three':'two')+'">'+(s.orig.map(function(i){return stage(i,'o')}).join(''))+((s.prev||[]).map(function(i){return stage(i,'p')}).join(''))+(s.removed?'<div class="col n"><h3>אחרי תיקון</h3><div class="removed">העמוד הוסר מהנספח</div></div>':s.fixed.map(function(i){return stage(i,'n')}).join(''))+'</div>';
-    h+='<div class="done"><span class="lbl">מה בוצע:</span> '+esc(s.done)+'</div>';
-    if(s.extra&&s.extra.length)h+='<div class="grid one">'+s.extra.map(function(i){return stage(i,'n')}).join('')+'</div>';
-    if(s.note)h+='<div class="note"><span class="lbl">שים לב:</span> '+esc(s.note)+'</div>';
-  }else{
-    h+='<div class="grid many">'+s.orig.map(function(i){return stage(i,'o')}).join('')+'</div>';
-    h+='<div class="unclear"><span class="lbl">'+(s.kind=='wait'?'סטטוס':'מה לא ברור')+':</span> '+esc(s.unclear)+'</div>'+(s.rec?'<div class="rec"><span class="lbl">'+esc(s.rec.split(':')[0])+':</span>'+esc(s.rec.slice(s.rec.indexOf(':')+1))+'</div>':'');
-  }
-  h+='<div class="pinlist" id="pl-'+s.id+'"></div><label class="lbl" for="tx-'+s.id+'">הערות / תיקונים לכרטיס הזה</label><textarea id="tx-'+s.id+'" placeholder="כתבו כאן החלטה, תיקון או שאלה…"></textarea>';
+  var c=document.createElement('section');c.className='card '+(s.kind=='fixed'?'':'wait');c.id='sec-'+s.id;
+  var h='<h2>'+esc(s.title)+' <span class="badge">'+(s.kind=='fixed'?'תוקן':'ממתין')+'</span></h2><p class="what">'+esc(s.what)+'</p>';
+  h+='<div class="grid'+(s.kind=='fixed'?'':' one')+'">'+s.orig.map(function(i){return stage(i,'o')}).join('')+(s.kind=='fixed'?(s.removed?'<div class="col n"><h3>גרסה אחרונה</h3><div class="removed">העמוד הוסר</div></div>':s.fixed.map(function(i){return stage(i,'n')}).join('')):'')+'</div>';
+  h+='<div class="pinlist" id="pl-'+s.id+'"></div><textarea id="tx-'+s.id+'" placeholder="הערה לעמוד הזה…"></textarea>';
   c.innerHTML=h;host.appendChild(c);
   var ta=c.querySelector('#tx-'+s.id);ta.value=ST.notes[s.id]||'';ta.oninput=function(){ST.notes[s.id]=ta.value;save()};
 });
-function secOf(imgId){for(var k=0;k<SECS.length;k++){var s=SECS[k];for(var l of ['orig','prev','fixed','extra'])for(var i of (s[l]||[]))if(i.id==imgId)return s.id}}
+function secOf(imgId){for(var k=0;k<SECS.length;k++){var s=SECS[k];for(var l of ['orig','fixed'])for(var i of (s[l]||[]))if(i.id==imgId)return s.id}}
 function draw(){
   document.querySelectorAll('.pin').forEach(function(e){e.remove()});
   SECS.forEach(function(s){var L=document.getElementById('pl-'+s.id);L.innerHTML='';var n=0;
@@ -103,7 +74,7 @@ function draw(){
       if(stg){var pin=document.createElement('div');pin.className='pin';pin.textContent=num;pin.style.left='calc('+p.x+'% - 26px)';pin.style.top=p.y+'%';
         pin.onclick=function(e){e.stopPropagation();var t=L.querySelector('[data-i="'+idx+'"] textarea');if(t)t.focus()};stg.appendChild(pin)}
       var d=document.createElement('div');d.className='item';d.setAttribute('data-i',idx);
-      d.innerHTML='<b>#'+num+'</b> <span class="meta">'+esc(LABEL[p.img]||p.img)+' · '+p.x+'%, '+p.y+'%</span> <button type="button" class="del">✕</button><textarea placeholder="כתבו הערה…"></textarea>';
+      d.innerHTML='<b>#'+num+'</b> <span class="meta">'+esc(LABEL[p.img]||p.img)+'</span> <button type="button" class="del">✕</button><textarea placeholder="כתבו הערה…"></textarea>';
       var t=d.querySelector('textarea');t.value=p.c||'';t.oninput=function(){p.c=t.value;save()};
       d.querySelector('.del').onclick=function(){if(confirm('למחוק סיכה '+num+'?')){ST.pins.splice(idx,1);save();draw()}};L.appendChild(d)})})}
 document.querySelectorAll('.stage').forEach(function(stg){stg.addEventListener('click',function(e){
@@ -112,15 +83,15 @@ document.querySelectorAll('.stage').forEach(function(stg){stg.addEventListener('
   var id=stg.getAttribute('data-img');ST.pins.push({sec:secOf(id),img:id,x:x,y:y,c:'',t:new Date().toISOString()});save();draw();
   var L=document.getElementById('pl-'+secOf(id));var t=L.lastChild&&L.lastChild.querySelector('textarea');if(t)t.focus()})});
 function summary(){
-  var out=[TITLE+' (v16b, מהדורה חרדית; הכללית זהה)',''],any=false;
+  var out=[TITLE+' (מהדורה חרדית; הכללית זהה)',''],any=false;
   SECS.forEach(function(s){var note=(ST.notes[s.id]||'').trim(),pins=ST.pins.filter(function(p){return p.sec==s.id});
-    if(!note&&!pins.length)return;any=true;out.push('== '+s.title+(s.kind=='fixed'?' (תוקן)':(s.kind=='wait'?' (ממתין להסבר של יעל)':' (שאלה פתוחה)'))+' ==');
+    if(!note&&!pins.length)return;any=true;out.push('== '+s.title+' ==');
     if(note)out.push('הערה: '+note);
     pins.forEach(function(p,i){out.push('#'+(i+1)+' ['+(LABEL[p.img]||p.img)+'] (x '+p.x+'%, y '+p.y+'%): '+(p.c||''))});out.push('')});
   if(!any)out.push('(אין הערות)');return out.join('\n')}
-function doExport(){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([summary()+'\n\n'+JSON.stringify(ST,null,1)],{type:'text/plain;charset=utf-8'}));a.download='magic-appendix-v16b-notes.txt';a.click()}
+function doExport(){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([summary()+'\n\n'+JSON.stringify(ST,null,1)],{type:'text/plain;charset=utf-8'}));a.download='magic-appendix-v16c-notes.txt';a.click()}
 function doCopy(){var t=summary();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){alert('הועתק')}).catch(function(){prompt('העתיקו ידנית:',t)})}
-['exp','exp2'].forEach(function(i){document.getElementById(i).onclick=doExport});['cp','cp2'].forEach(function(i){document.getElementById(i).onclick=doCopy});
+['exp'].forEach(function(i){document.getElementById(i).onclick=doExport});['cp'].forEach(function(i){document.getElementById(i).onclick=doCopy});
 document.getElementById('done').onclick=function(){var m=document.getElementById('doneMsg');var t=summary();
   if(t.indexOf('(אין הערות)')>=0){m.style.color='#c00';m.textContent='אין עדיין הערות. הוסיפו סיכה או הערה ולחצו שוב.';return}
   m.style.color='#080';m.textContent='פותח וואטסאפ עם כל ההערות… (אם ההודעה ארוכה מדי, השתמשו ב«העתקת הערות»)';
